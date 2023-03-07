@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/Infinix-X657B
+DEVICE_PATH := device/infinix/X657B
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -70,6 +70,7 @@ BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := infinix_dynamic_partitions
 BOARD_INFINIX_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
 BOARD_INFINIX_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 9126805504
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6761
