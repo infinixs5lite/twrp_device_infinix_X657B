@@ -6,18 +6,22 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Inherit from Infinix-X657B device
-$(call inherit-product, device/infinix/Infinix-X657B/device.mk)
+# Inherit some common twrp stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 
-PRODUCT_DEVICE := Infinix-X657B
-PRODUCT_NAME := omni_Infinix-X657B
+# Inherit from X657B device
+$(call inherit-product, device/infinix/X657B/device.mk)
+
+PRODUCT_DEVICE := X657B
+PRODUCT_NAME := twrp_X657B
 PRODUCT_BRAND := Infinix
-PRODUCT_MODEL := Infinix X657B
+PRODUCT_MODEL := Infinix Smart 5
 PRODUCT_MANUFACTURER := infinix
 
 PRODUCT_GMS_CLIENTID_BASE := android-infinix
